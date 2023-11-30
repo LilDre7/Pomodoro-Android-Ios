@@ -19,7 +19,13 @@ export default function App() {
       <StatusBar style="auto" />
       <View style={Platform.OS === "android" && styles.container__plaform}>
         <Text style={styles.title} >Pomodoro</Text>
-        <Header isTime={isTime} isCurrentTime={isCurrentTime}  />
+        <Header 
+        isTime={isTime} 
+        isCurrentTime={isCurrentTime} 
+        isWorking={isWorking} 
+        setIsCurrentTime={setIsCurrentTime} 
+        setIsTime={setIsTime}
+       />
       </View>
     </SafeAreaView>
   );
@@ -37,5 +43,6 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 75,
+    paddingLeft: 10
   },
 });
