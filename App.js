@@ -35,7 +35,7 @@ export default function App() {
 
       interval = setInterval(() => {
         setIsTime(isTime - 1);
-      }, 1);
+      }, 1000);
     } else {
       clearInterval(interval);
     }
@@ -53,6 +53,13 @@ export default function App() {
     playSound();
     setIsActive(!isActive);
   };
+
+  const handleRestartButton = () => {
+    // Reinicar el temporizador
+    setIsTime(time);
+    setIsWorking(false);
+    setIsActive(!isActive);
+  }
 
   async function playSound() {
     const { sound } = await Audio.Sound.createAsync(
@@ -94,7 +101,7 @@ export default function App() {
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={handlePressButton}
+        onPress={handleRestartButton}
         activeOpacity={0.8}
         // disabled={isActive}
         style={styles.container__button}
