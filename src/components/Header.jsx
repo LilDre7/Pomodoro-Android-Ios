@@ -1,13 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import Time from "./Time";
 
 const option = ["Pomodo", "Short Break", "Long Break"];
 
 const Header = ({
-  isTime,
   isCurrentTime,
-  isWorking,
   setIsCurrentTime,
   setIsTime,
 }) => {

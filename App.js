@@ -4,7 +4,6 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
   Platform,
   SafeAreaView,
   TouchableOpacity,
@@ -12,6 +11,7 @@ import {
 import Header from "./src/components/Header";
 import Time from "./src/components/Time";
 import { Audio } from "expo-av";
+import IconReturn from "./src/utils/IconReturn";
 
 const colors = ["#f7DC6F", "#A2D9CE", "#D7BDE2"];
 
@@ -24,7 +24,7 @@ export default function App() {
   const [isCurrentTime, setIsCurrentTime] = useState(
     "POMO" | "SHORT" | "BREAK"
   );
-
+  
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function App() {
       clearInterval(interval);
     }
 
-    if(isTime === 0){
+    if (isTime === 0) {
       setIsActive(false);
       setIsWorking(!isWorking);
       setIsTime(isWorking ? isTime : 5 * 60);
@@ -59,7 +59,7 @@ export default function App() {
     setIsTime(time);
     setIsWorking(false);
     setIsActive(!isActive);
-  }
+  };
 
   async function playSound() {
     const { sound } = await Audio.Sound.createAsync(
@@ -83,9 +83,7 @@ export default function App() {
       <View style={Platform.OS === "android" && styles.container__plaform}>
         <Text style={styles.title}>Pomodoro</Text>
         <Header
-          isTime={isTime}
           isCurrentTime={isCurrentTime}
-          isWorking={isWorking}
           setIsCurrentTime={setIsCurrentTime}
           setIsTime={setIsTime}
         />
@@ -94,7 +92,6 @@ export default function App() {
       <TouchableOpacity
         onPress={handlePressButton}
         activeOpacity={0.8}
-        // disabled={isActive}
         style={styles.container__button}
       >
         <Text style={styles.button__style}>{isActive ? "STOP" : "START"}</Text>
@@ -103,12 +100,12 @@ export default function App() {
       <TouchableOpacity
         onPress={handleRestartButton}
         activeOpacity={0.8}
-        // disabled={isActive}
-        style={styles.container__button}
+        style={styles.container__icon__return}
       >
-        <Text style={styles.button__style}>REINICIAR</Text>
+        <View style={styles.icon__return}>
+          <IconReturn />
+        </View>
       </TouchableOpacity>
-
     </SafeAreaView>
   );
 }
@@ -117,6 +114,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     fontFamily: "Roboto",
+    position: "relative",
   },
   container__plaform: {
     paddingTop: 55,
@@ -138,4 +136,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "white",
   },
+  container__icon__return: {
+    position: "relative",
+  },
+  icon__return: {
+    position: "absolute",
+    top: -280,
+    left: 24,
+    height: 40,
+    width: 40,
+  }
 });
