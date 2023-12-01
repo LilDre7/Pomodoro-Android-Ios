@@ -32,3 +32,6 @@ expo start
 
 ## Contribuciones
 ¡Contribuciones son bienvenidas! Si encuentras algún problema o tienes sugerencias para mejorar la aplicación, por favor, abre un issue o envía un pull request.
+
+## Licencia
+Este proyecto está bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
