@@ -12,6 +12,7 @@ import Header from "./src/components/Header";
 import Time from "./src/components/Time";
 import { Audio } from "expo-av";
 import IconReturn from "./src/utils/IconReturn";
+import ApiUsers from "./src/components/ApiUsers";
 
 const colors = ["#f7DC6F", "#A2D9CE", "#D7BDE2"];
 
@@ -24,7 +25,7 @@ export default function App() {
   const [isCurrentTime, setIsCurrentTime] = useState(
     "POMO" | "SHORT" | "BREAK"
   );
-  
+
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
@@ -56,6 +57,7 @@ export default function App() {
 
   const handleRestartButton = () => {
     // Reinicar el temporizador
+    playSound()
     setIsTime(time);
     setIsWorking(false);
     setIsActive(!isActive);

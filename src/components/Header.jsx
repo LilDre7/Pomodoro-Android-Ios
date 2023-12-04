@@ -8,7 +8,9 @@ const Header = ({
   setIsCurrentTime,
   setIsTime,
 }) => {
+  // Estás index, ¿qué valor tiene?
   const handlePress = (index) => {
+    console.log(index)
     // Se define una variable llamada newTime utilizando un operador ternario.
     // Si index es igual a 0, newTime será 25; si index es igual a 1, newTime será 5; de lo contrario, newTime será 10.
     const newTime = index === 0 ? 25 : index === 1 ? 5 : 10;
@@ -23,7 +25,12 @@ const Header = ({
   };
 
   const borderInput = (index) => {
-    return isCurrentTime !== index && { borderColor: "red" };
+    return (
+      isCurrentTime !== index && {
+        backgroundColor: "#fff",
+        borderColor: "#fff",
+      }
+    );
   };
 
   return (
