@@ -9,7 +9,7 @@ La Pomodoro App es una aplicación móvil creada con React Native y Expo que te 
 - Opción de tener un descanso largo (long break) después de completar un número específico de pomodoros.
 - Interfaz simple e intuitiva.
 
-## Capturas de Pantalla
+## Capturas de Pantalla 
 
 <div display="flex" width="100%" alignItem="center" >
  <img src="/assets/Imagen%20de%20WhatsApp%202023-12-01%20a%20las%2015.44.50_0b2d75a0.jpg" alt="Captura de Pantalla 1" width="200" height="300" />
