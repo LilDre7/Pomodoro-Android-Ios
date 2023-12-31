@@ -1,5 +1,5 @@
 # Pomodoro App - React Native 📱
-7790080
+779008
 La Pomodoro App es una aplicación móvil creada con React Native y Expo que te ayuda a aplicar la técnica Pomodoro para mejorar tu productividad. La técnica Pomodoro consiste en trabajar durante períodos cortos de tiempo (llamados "pomodoros") seguidos de descansos cortos o largos. 
 
 ## Características
